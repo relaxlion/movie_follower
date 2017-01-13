@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113073406) do
+ActiveRecord::Schema.define(version: 20170113073423) do
 
   create_table "origins", force: :cascade do |t|
     t.string   "name"
     t.string   "author"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "name"
+    t.string   "language"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

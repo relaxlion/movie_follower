@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Golden Horses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Best newcomer</th>
+      <th>Best supporting actor</th>
+      <th>Best supporting actress</th>
+      <th>Best actor</th>
+      <th>Best actress</th>
+      <th>Best screenplay</th>
+      <th>Best director</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @golden_horses.each do |golden_horse| %>
+      <tr>
+        <td><%= golden_horse.year %></td>
+        <td><%= golden_horse.best_newcomer %></td>
+        <td><%= golden_horse.best_supporting_actor %></td>
+        <td><%= golden_horse.best_supporting_actress %></td>
+        <td><%= golden_horse.best_actor %></td>
+        <td><%= golden_horse.best_actress %></td>
+        <td><%= golden_horse.best_screenplay %></td>
+        <td><%= golden_horse.best_director %></td>
+        <td><%= link_to 'Show', golden_horse %></td>
+        <td><%= link_to 'Edit', edit_golden_horse_path(golden_horse) %></td>
+        <td><%= link_to 'Destroy', golden_horse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Golden Horse', new_golden_horse_path %>

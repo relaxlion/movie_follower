@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @golden_horse.year %>
+</p>
+
+<p>
+  <strong>Best newcomer:</strong>
+  <%= @golden_horse.best_newcomer %>
+</p>
+
+<p>
+  <strong>Best supporting actor:</strong>
+  <%= @golden_horse.best_supporting_actor %>
+</p>
+
+<p>
+  <strong>Best supporting actress:</strong>
+  <%= @golden_horse.best_supporting_actress %>
+</p>
+
+<p>
+  <strong>Best actor:</strong>
+  <%= @golden_horse.best_actor %>
+</p>
+
+<p>
+  <strong>Best actress:</strong>
+  <%= @golden_horse.best_actress %>
+</p>
+
+<p>
+  <strong>Best screenplay:</strong>
+  <%= @golden_horse.best_screenplay %>
+</p>
+
+<p>
+  <strong>Best director:</strong>
+  <%= @golden_horse.best_director %>
+</p>
+
+<%= link_to 'Edit', edit_golden_horse_path(@golden_horse) %> |
+<%= link_to 'Back', golden_horses_path %>

@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170113082112) do
-=======
-ActiveRecord::Schema.define(version: 20170113082002) do
+ActiveRecord::Schema.define(version: 20170113083341) do
 
   create_table "actors", force: :cascade do |t|
     t.integer  "person_id"
@@ -23,7 +20,6 @@ ActiveRecord::Schema.define(version: 20170113082002) do
     t.index ["movie_id"], name: "index_actors_on_movie_id"
     t.index ["person_id"], name: "index_actors_on_person_id"
   end
->>>>>>> actor
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
@@ -47,6 +43,26 @@ ActiveRecord::Schema.define(version: 20170113082002) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["country_id"], name: "index_distributors_on_country_id"
+  end
+
+  create_table "golden_horses", force: :cascade do |t|
+    t.integer  "year"
+    t.integer  "best_newcomer_id"
+    t.integer  "best_supporting_actor_id"
+    t.integer  "best_supporting_actress_id"
+    t.integer  "best_actor_id"
+    t.integer  "best_actress_id"
+    t.integer  "best_screenplay_id"
+    t.integer  "best_director_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["best_actor_id"], name: "index_golden_horses_on_best_actor_id"
+    t.index ["best_actress_id"], name: "index_golden_horses_on_best_actress_id"
+    t.index ["best_director_id"], name: "index_golden_horses_on_best_director_id"
+    t.index ["best_newcomer_id"], name: "index_golden_horses_on_best_newcomer_id"
+    t.index ["best_screenplay_id"], name: "index_golden_horses_on_best_screenplay_id"
+    t.index ["best_supporting_actor_id"], name: "index_golden_horses_on_best_supporting_actor_id"
+    t.index ["best_supporting_actress_id"], name: "index_golden_horses_on_best_supporting_actress_id"
   end
 
   create_table "movies", force: :cascade do |t|

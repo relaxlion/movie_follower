@@ -1,0 +1,1 @@
+json.partial! "golden_horses/golden_horse", golden_horse: @golden_horse

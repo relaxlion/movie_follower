@@ -1,0 +1,2 @@
+json.extract! golden_horse, :id, :year, :best_newcomer_id, :best_supporting_actor_id, :best_supporting_actress_id, :best_actor_id, :best_actress_id, :best_screenplay_id, :best_director_id, :created_at, :updated_at
+json.url golden_horse_url(golden_horse, format: :json)

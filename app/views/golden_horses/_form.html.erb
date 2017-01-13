@@ -1,0 +1,57 @@
+<%= form_for(golden_horse) do |f| %>
+  <% if golden_horse.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(golden_horse.errors.count, "error") %> prohibited this golden_horse from being saved:</h2>
+
+      <ul>
+      <% golden_horse.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :year %>
+    <%= f.number_field :year %>
+  </div>
+
+  <div class="field">
+    <%= f.label :best_newcomer_id %>
+    <%= f.text_field :best_newcomer_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :best_supporting_actor_id %>
+    <%= f.text_field :best_supporting_actor_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :best_supporting_actress_id %>
+    <%= f.text_field :best_supporting_actress_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :best_actor_id %>
+    <%= f.text_field :best_actor_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :best_actress_id %>
+    <%= f.text_field :best_actress_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :best_screenplay_id %>
+    <%= f.text_field :best_screenplay_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :best_director_id %>
+    <%= f.text_field :best_director_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

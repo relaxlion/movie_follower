@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: 1
+  best_newcomer: one
+  best_supporting_actor: one
+  best_supporting_actress: one
+  best_actor: one
+  best_actress: one
+  best_screenplay: one
+  best_director: one
+
+two:
+  year: 1
+  best_newcomer: two
+  best_supporting_actor: two
+  best_supporting_actress: two
+  best_actor: two
+  best_actress: two
+  best_screenplay: two
+  best_director: two

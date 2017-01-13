@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chinese_name: MyString
+  english_name: MyString
+  type: 
+  played_at: 2017-01-13 16:09:52
+  IMDB: 1.5
+  rating: MyString
+  length: 1
+  origin: one
+  distributor: one
+  productor: one
+  box_office: 1
+
+two:
+  chinese_name: MyString
+  english_name: MyString
+  type: 
+  played_at: 2017-01-13 16:09:52
+  IMDB: 1.5
+  rating: MyString
+  length: 1
+  origin: two
+  distributor: two
+  productor: two
+  box_office: 1

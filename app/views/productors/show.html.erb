@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @productor.name %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @productor.country %>
+</p>
+
+<%= link_to 'Edit', edit_productor_path(@productor) %> |
+<%= link_to 'Back', productors_path %>

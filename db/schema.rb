@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113075313) do
+ActiveRecord::Schema.define(version: 20170113080952) do
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +25,25 @@ ActiveRecord::Schema.define(version: 20170113075313) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["country_id"], name: "index_distributors_on_country_id"
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.string   "chinese_name"
+    t.string   "english_name"
+    t.string   "type"
+    t.datetime "played_at"
+    t.float    "IMDB"
+    t.string   "rating"
+    t.integer  "length"
+    t.integer  "origin_id"
+    t.integer  "distributor_id"
+    t.integer  "productor_id"
+    t.integer  "box_office"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["distributor_id"], name: "index_movies_on_distributor_id"
+    t.index ["origin_id"], name: "index_movies_on_origin_id"
+    t.index ["productor_id"], name: "index_movies_on_productor_id"
   end
 
   create_table "origins", force: :cascade do |t|
@@ -43,6 +62,14 @@ ActiveRecord::Schema.define(version: 20170113075313) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["country_id"], name: "index_people_on_country_id"
+  end
+
+  create_table "productors", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "country_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country_id"], name: "index_productors_on_country_id"
   end
 
 end

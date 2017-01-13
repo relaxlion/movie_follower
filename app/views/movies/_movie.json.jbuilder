@@ -1,0 +1,2 @@
+json.extract! movie, :id, :chinese_name, :english_name, :type, :played_at, :IMDB, :rating, :length, :origin_id, :distributor_id, :productor_id, :box_office, :created_at, :updated_at
+json.url movie_url(movie, format: :json)

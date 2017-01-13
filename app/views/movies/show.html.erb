@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Chinese name:</strong>
+  <%= @movie.chinese_name %>
+</p>
+
+<p>
+  <strong>English name:</strong>
+  <%= @movie.english_name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @movie.type %>
+</p>
+
+<p>
+  <strong>Played at:</strong>
+  <%= @movie.played_at %>
+</p>
+
+<p>
+  <strong>Imdb:</strong>
+  <%= @movie.IMDB %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @movie.rating %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @movie.length %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @movie.origin %>
+</p>
+
+<p>
+  <strong>Distributor:</strong>
+  <%= @movie.distributor %>
+</p>
+
+<p>
+  <strong>Productor:</strong>
+  <%= @movie.productor %>
+</p>
+
+<p>
+  <strong>Box office:</strong>
+  <%= @movie.box_office %>
+</p>
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>

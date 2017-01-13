@@ -1,0 +1,72 @@
+<%= form_for(movie) do |f| %>
+  <% if movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :chinese_name %>
+    <%= f.text_field :chinese_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :english_name %>
+    <%= f.text_field :english_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type %>
+    <%= f.text_field :type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :played_at %>
+    <%= f.datetime_select :played_at %>
+  </div>
+
+  <div class="field">
+    <%= f.label :IMDB %>
+    <%= f.text_field :IMDB %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rating %>
+    <%= f.text_field :rating %>
+  </div>
+
+  <div class="field">
+    <%= f.label :length %>
+    <%= f.number_field :length %>
+  </div>
+
+  <div class="field">
+    <%= f.label :origin_id %>
+    <%= f.text_field :origin_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :distributor_id %>
+    <%= f.text_field :distributor_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :productor_id %>
+    <%= f.text_field :productor_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :box_office %>
+    <%= f.number_field :box_office %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

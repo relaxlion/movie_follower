@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170113083341) do
-=======
-ActiveRecord::Schema.define(version: 20170113082112) do
->>>>>>> 0e73fedb618f3593b1ee68127078696140afbeeb
+ActiveRecord::Schema.define(version: 20170113083731) do
 
   create_table "actors", force: :cascade do |t|
     t.integer  "person_id"
@@ -93,6 +89,32 @@ ActiveRecord::Schema.define(version: 20170113082112) do
     t.string   "author"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "oscars", force: :cascade do |t|
+    t.integer  "year"
+    t.integer  "best_picture_id"
+    t.integer  "best_director_id"
+    t.integer  "best_actor_id"
+    t.integer  "best_actress_id"
+    t.integer  "best_supporting_actor_id"
+    t.integer  "best_supporting_actress_id"
+    t.integer  "best_animated_feature_flim_id"
+    t.integer  "best_foreign_language_flim_id"
+    t.integer  "best_original_screenplay_id"
+    t.integer  "best_adapted_screenplay_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["best_actor_id"], name: "index_oscars_on_best_actor_id"
+    t.index ["best_actress_id"], name: "index_oscars_on_best_actress_id"
+    t.index ["best_adapted_screenplay_id"], name: "index_oscars_on_best_adapted_screenplay_id"
+    t.index ["best_animated_feature_flim_id"], name: "index_oscars_on_best_animated_feature_flim_id"
+    t.index ["best_director_id"], name: "index_oscars_on_best_director_id"
+    t.index ["best_foreign_language_flim_id"], name: "index_oscars_on_best_foreign_language_flim_id"
+    t.index ["best_original_screenplay_id"], name: "index_oscars_on_best_original_screenplay_id"
+    t.index ["best_picture_id"], name: "index_oscars_on_best_picture_id"
+    t.index ["best_supporting_actor_id"], name: "index_oscars_on_best_supporting_actor_id"
+    t.index ["best_supporting_actress_id"], name: "index_oscars_on_best_supporting_actress_id"
   end
 
   create_table "people", force: :cascade do |t|

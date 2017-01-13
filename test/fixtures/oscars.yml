@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: 1
+  best_picture: one
+  best_director: one
+  best_actor: one
+  best_actress: one
+  best_supporting_actor: one
+  best_supporting_actress: one
+  best_animated_feature_flim: one
+  best_foreign_language_flim: one
+  best_original_screenplay: one
+  best_adapted_screenplay: one
+
+two:
+  year: 1
+  best_picture: two
+  best_director: two
+  best_actor: two
+  best_actress: two
+  best_supporting_actor: two
+  best_supporting_actress: two
+  best_animated_feature_flim: two
+  best_foreign_language_flim: two
+  best_original_screenplay: two
+  best_adapted_screenplay: two

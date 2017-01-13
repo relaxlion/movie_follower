@@ -1,0 +1,2 @@
+json.extract! oscar, :id, :year, :best_picture_id, :best_director_id, :best_actor_id, :best_actress_id, :best_supporting_actor_id, :best_supporting_actress_id, :best_animated_feature_flim_id, :best_foreign_language_flim_id, :best_original_screenplay_id, :best_adapted_screenplay_id, :created_at, :updated_at
+json.url oscar_url(oscar, format: :json)

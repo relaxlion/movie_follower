@@ -1,0 +1,1 @@
+json.array! @oscars, partial: 'oscars/oscar', as: :oscar

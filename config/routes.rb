@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :golden_horses
+  resources :oscars
   resources :movies
   resources :productors
   resources :people

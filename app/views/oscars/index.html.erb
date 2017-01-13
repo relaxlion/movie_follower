@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Oscars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Best picture</th>
+      <th>Best director</th>
+      <th>Best actor</th>
+      <th>Best actress</th>
+      <th>Best supporting actor</th>
+      <th>Best supporting actress</th>
+      <th>Best animated feature flim</th>
+      <th>Best foreign language flim</th>
+      <th>Best original screenplay</th>
+      <th>Best adapted screenplay</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oscars.each do |oscar| %>
+      <tr>
+        <td><%= oscar.year %></td>
+        <td><%= oscar.best_picture %></td>
+        <td><%= oscar.best_director %></td>
+        <td><%= oscar.best_actor %></td>
+        <td><%= oscar.best_actress %></td>
+        <td><%= oscar.best_supporting_actor %></td>
+        <td><%= oscar.best_supporting_actress %></td>
+        <td><%= oscar.best_animated_feature_flim %></td>
+        <td><%= oscar.best_foreign_language_flim %></td>
+        <td><%= oscar.best_original_screenplay %></td>
+        <td><%= oscar.best_adapted_screenplay %></td>
+        <td><%= link_to 'Show', oscar %></td>
+        <td><%= link_to 'Edit', edit_oscar_path(oscar) %></td>
+        <td><%= link_to 'Destroy', oscar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Oscar', new_oscar_path %>

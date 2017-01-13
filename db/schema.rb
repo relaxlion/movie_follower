@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113073423) do
+ActiveRecord::Schema.define(version: 20170113075313) do
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "name"
+    t.string   "language"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "origins", force: :cascade do |t|
     t.string   "name"
@@ -19,11 +26,15 @@ ActiveRecord::Schema.define(version: 20170113073423) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "countries", force: :cascade do |t|
-    t.string   "name"
-    t.string   "language"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "people", force: :cascade do |t|
+    t.string   "chinese_name"
+    t.string   "english_name"
+    t.integer  "country_id"
+    t.string   "gender"
+    t.datetime "birthday"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["country_id"], name: "index_people_on_country_id"
   end
 
 end

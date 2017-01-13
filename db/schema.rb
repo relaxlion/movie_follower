@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170113083341) do
+=======
+ActiveRecord::Schema.define(version: 20170113082112) do
+>>>>>>> 0e73fedb618f3593b1ee68127078696140afbeeb
 
   create_table "actors", force: :cascade do |t|
     t.integer  "person_id"

@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113083731) do
+ActiveRecord::Schema.define(version: 20170114061507) do
+
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string   "namespace"
+    t.text     "body"
+    t.string   "resource_id",   null: false
+    t.string   "resource_type", null: false
+    t.string   "author_type"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
 
   create_table "actors", force: :cascade do |t|
     t.integer  "person_id"
@@ -68,7 +82,7 @@ ActiveRecord::Schema.define(version: 20170113083731) do
   create_table "movies", force: :cascade do |t|
     t.string   "chinese_name"
     t.string   "english_name"
-    t.string   "type"
+    t.string   "movie_type"
     t.datetime "played_at"
     t.float    "IMDB"
     t.string   "rating"

@@ -24,10 +24,13 @@ permit_params :year, :best_picture_id, :best_supporting_actor_id, :best_supporti
 		attributes_table do
 			row :id
 			row :best_picture do
-				link_to "#{Movie.find(oscar.best_picture_id).chinese_name}"
+				movie = Movie.find(oscar.best_picture_id)
+				name = movie.chinese_name
+				link_to "#{name}", admin_movie_path(id: movie.id)
 			end
 			row :best_director do
-				link_to "#{Person.find(Director.find(oscar.best_director_id).person_id).chinese_name}"
+				director = Person.find(Director.find(oscar.best_director_id).person_id)
+				link_to "#{director.chinese_name}", admin_person_path(id: director.id)
 			end
 			row :best_actor do
 				link_to "#{Person.find(Actor.find(oscar.best_actor_id).person_id).chinese_name}"

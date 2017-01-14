@@ -1,7 +1,6 @@
 ActiveAdmin.setup do |config|
-    config.comments = false
-    config.dashboards = false
-  # == Site Title
+    config.comments = false  # 
+# == Site Title
   #
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
@@ -114,7 +113,7 @@ ActiveAdmin.setup do |config|
   # roots for each namespace.
   #
   # Default:
-  # config.root_to = 'dashboard#index'
+  config.root_to = 'movies#index'
 
   # == Admin Comments
   #

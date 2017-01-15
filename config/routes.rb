@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
+  root to: "homepages#index"
   resources :golden_horses
   resources :oscars
   resources :movies

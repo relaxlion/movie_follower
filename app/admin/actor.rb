@@ -29,10 +29,10 @@ permit_params :movie_id, :person_id
 		attributes_table do
 			row :id
 			row :movie do
-				link_to "#{Movie.find(actor.movie_id).chinese_name}"
+				link_to "#{Movie.find(actor.movie_id).chinese_name}", admin_movie_path(id: actor.movie.id)
 			end
 			row :person do
-				link_to "#{Person.find(actor.person_id).chinese_name}"
+				link_to "#{Person.find(actor.person_id).chinese_name}", admin_person_path(id: actor.person.id)
 			end
 		end
 	end
@@ -47,5 +47,7 @@ permit_params :movie_id, :person_id
 		f.actions
 	end
 
-	config.filters = false
+	filter  :movie, as: :select, :collection => Movie.all.map{|m| ["#{m.chinese_name}", m.id]}
+	filter  :person, as: :select, :collection => Person.all.map{|p| ["#{p.chinese_name}", p.id]}
+	
 end

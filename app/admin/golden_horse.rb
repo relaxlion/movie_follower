@@ -23,31 +23,31 @@ permit_params :year, :best_newcomer_id, :best_supporting_actor_id, :best_support
 			row :id
 			row :best_newcomer do
 				actor = Person.find(Actor.find(golden_horse.best_newcomer_id).person_id)
-				link_to "#{actor.chinese_name}", admin_actor_path(id: actor.id)
+				link_to "#{actor.chinese_name}", admin_actor_path(id: golden_horse.best_newcomer.id)
 			end
 			row :best_director do
 				director = Person.find(Director.find(golden_horse.best_director_id).person_id)
-				link_to "#{director.chinese_name}", admin_director_path(id: director.id)
+				link_to "#{director.chinese_name}", admin_director_path(id: golden_horse.best_director.id)
 			end
 			row :best_actor do
 				actor = Person.find(Actor.find(golden_horse.best_actor_id).person_id)
-				link_to "#{actor.chinese_name}", admin_actor_path(id: actor.id)
+				link_to "#{actor.chinese_name}", admin_actor_path(id: golden_horse.best_actor.id)
 			end
 			row :best_actress do
 				actor = Person.find(Actor.find(golden_horse.best_actress_id).person_id)
-				link_to "#{actor.chinese_name}", admin_actor_path(id: actor.id)
+				link_to "#{actor.chinese_name}", admin_actor_path(id: golden_horse.best_actress.id)
 			end
 			row :best_supporting_actor do
 				actor = Person.find(Actor.find(golden_horse.best_supporting_actor_id).person_id)
-				link_to "#{actor.chinese_name}", admin_actor_path(id: actor.id)
+				link_to "#{actor.chinese_name}", admin_actor_path(id: golden_horse.best_supporting_actor.id)
 			end
 			row :best_supporting_actress do
 				actor = Person.find(Actor.find(golden_horse.best_supporting_actress_id).person_id)
-				link_to "#{actor.chinese_name}", admin_actor_path(id: actor.id)
+				link_to "#{actor.chinese_name}", admin_actor_path(id: golden_horse.best_supporting_actress.id)
 			end
 			row :best_screenplay do
 				 movie = Movie.find(Writer.find(golden_horse.best_screenplay_id).movie_id)
-				link_to "#{movie.chinese_name}", admin_writer_path(id: movie.id)
+				link_to "#{movie.chinese_name}", admin_writer_path(id: golden_horse.best_screenplay.id)
 			end
 	
 

@@ -25,43 +25,43 @@ permit_params :year, :best_picture_id, :best_supporting_actor_id, :best_supporti
 			row :id
 			row :best_picture do
 				movie = Movie.find(oscar.best_picture_id)
-				link_to "#{movie.chinese_name}", admin_movie_path(id: movie.id)
+				link_to "#{movie.chinese_name}", admin_movie_path(id: oscar.best_picture.id)
 			end
 			row :best_director do
 				director = Person.find(Director.find(oscar.best_director_id).person_id)
-				link_to "#{director.chinese_name}", admin_director_path(id: director.id)
+				link_to "#{director.chinese_name}", admin_director_path(id: oscar.best_director.id)
 			end
 			row :best_actor do
 				actor = Person.find(Actor.find(oscar.best_actor_id).person_id)
-				link_to "#{actor.chinese_name}", admin_actor_path(id: actor.id)
+				link_to "#{actor.chinese_name}", admin_actor_path(id: oscar.best_actor.id)
 			end
 			row :best_actress do
 				actor = Person.find(Actor.find(oscar.best_actress_id).person_id)
-				link_to "#{actor.chinese_name}", admin_actor_path(id: actor.id)
+				link_to "#{actor.chinese_name}", admin_actor_path(id: oscar.best_actress.id)
 			end
 			row :best_supporting_actor do
 				actor = Person.find(Actor.find(oscar.best_supporting_actor_id).person_id)
-				link_to "#{actor.chinese_name}", admin_actor_path(id: actor.id)
+				link_to "#{actor.chinese_name}", admin_actor_path(id: oscar.best_supporting_actor.id)
 			end
 			row :best_supporting_actress do
 				actor = Person.find(Actor.find(oscar.best_supporting_actress_id).person_id)
-				link_to "#{actor.chinese_name}", admin_actor_path(id: actor.id)
+				link_to "#{actor.chinese_name}", admin_actor_path(id: oscar.best_supporting_actress.id)
 			end
 			row :best_animated_feature_flim do
 				movie = Movie.find(oscar.best_animated_feature_flim_id)
-				link_to "#{movie.chinese_name}", admin_movie_path(id: movie.id)
+				link_to "#{movie.chinese_name}", admin_movie_path(id: oscar.best_animated_feature_flim.id)
 			end
 			row :best_foreign_language_flim do
 				movie = Movie.find(oscar.best_animated_feature_flim_id)
-				link_to "#{movie.chinese_name}", admin_movie_path(id: movie.id)
+				link_to "#{movie.chinese_name}", admin_movie_path(id: oscar.best_animated_feature_flim.id)
 			end
 			row :best_original_screenplay do
 				 movie = Movie.find(Writer.find(oscar.best_original_screenplay_id).movie_id)
-				link_to "#{movie.chinese_name}", admin_writer_path(id: movie.id)
+				link_to "#{movie.chinese_name}", admin_writer_path(id: oscar.best_original_screenplay.id)
 			end
 			row :best_adapted_screenplay do
 				movie = Movie.find(Writer.find(oscar.best_adapted_screenplay_id).movie_id)
-				link_to "#{movie.chinese_name}", admin_writer_path(id: movie.id)
+				link_to "#{movie.chinese_name}", admin_writer_path(id: oscar.best_adapted_screenplay.id)
 			end
 
 		end

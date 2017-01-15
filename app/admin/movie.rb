@@ -18,7 +18,7 @@ permit_params :origin_id, :movie_type, :distributor_id, :productor_id, :chinese_
 		column :english_name
 		column :movie_type 
 		column :played_at do |movie|
-				movie.played_at.strftime("%Y-%m-%d")
+				movie.played_at&.strftime("%Y-%m-%d")
 			end
 		column :IMDB
 		actions
@@ -28,7 +28,7 @@ permit_params :origin_id, :movie_type, :distributor_id, :productor_id, :chinese_
 		attributes_table do
 			rows :id, :chinese_name, :english_name, :movie_type, :IMDB, :rating, :length, :origin, :distributor, :productor, :box_office
 			row :played_at do |movie|
-				movie.played_at.strftime("%Y-%m-%d")
+				movie.played_at&.strftime("%Y-%m-%d")
 			end
 		end
 	end	

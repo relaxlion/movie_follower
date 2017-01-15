@@ -17,7 +17,7 @@ permit_params :chinese_name,:english_name,:country_id,:gender,:birthday
 		column :english_name
 		column :gender
 		column :birthday do |person|
-				person.birthday.strftime("%Y-%m-%d")
+				person.birthday&.strftime("%Y-%m-%d")
 			end
 		actions
 	end 
@@ -26,7 +26,7 @@ permit_params :chinese_name,:english_name,:country_id,:gender,:birthday
 		attributes_table do
 			rows :id, :chinese_name, :english_name, :country, :gender
 			row :birthday do
-				person.birthday.strftime("%Y-%m-%d")
+				person.birthday&.strftime("%Y-%m-%d")
 			end
 		end
 	end

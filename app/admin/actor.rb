@@ -15,10 +15,10 @@ permit_params :movie_id, :person_id
 
 	index do
 		id_column
-		column :actor_name do |d|
+		column :actor_name, sortable: true do |d|
 			Person.find(d.person_id).chinese_name
 		end
-		column :actor_movie do |d|
+		column :actor_movie, sortable: true do |d|
 			Movie.find(d.movie_id).chinese_name
 		end
 		actions

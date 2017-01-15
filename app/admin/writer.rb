@@ -1,5 +1,5 @@
 ActiveAdmin.register Writer do
- 	menu parent: "movier",priority: 2
+ 	menu parent: "Movier",priority: 2
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 
@@ -15,11 +15,11 @@ permit_params :movie_id, :person_id
 
 	index do
 		id_column
-		column :writer_name do |d|
-			Person.find(d.person_id).chinese_name
+		column :writer_name do |w|
+			Person.find(w.person_id).chinese_name
 		end
-		column :writer_movie do |d|
-			Movie.find(d.movie_id).chinese_name
+		column :writer_movie do |w|
+			Movie.find(w.movie_id).chinese_name
 		end
 		actions
 	end 
@@ -46,6 +46,6 @@ permit_params :movie_id, :person_id
 		end
 		f.actions
 	end
-
+	config.filters = false
 
 end

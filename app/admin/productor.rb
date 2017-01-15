@@ -14,4 +14,12 @@ permit_params :country_id, :name
 # end
 
 
+ 	index do
+		column :name 
+		actions
+	end 
+
+	filter :name
+	filter :country
+
 end

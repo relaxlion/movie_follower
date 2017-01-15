@@ -13,5 +13,14 @@ permit_params :name, :author
 #   permitted
 # end
 
+    index do
+		column :name 
+		column :author
+		actions
+	end 
+
+	filter :name
+	filter :author
+	
 
 end

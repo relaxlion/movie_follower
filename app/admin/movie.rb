@@ -15,9 +15,23 @@ permit_params :origin_id, :movie_type, :distributor_id, :productor_id, :chinese_
 
 	index do
 		column :chinese_name 
+		column :english_name
+		column :movie_type 
+		column :played_at do |movie|
+				movie.played_at.strftime("%Y-%m-%d")
+			end
 		column :IMDB
 		actions
 	end 
+
+	show do
+		attributes_table do
+			rows :id, :chinese_name, :english_name, :movie_type, :IMDB, :rating, :length, :box_office
+			row :played_at do |movie|
+				movie.played_at.strftime("%Y-%m-%d")
+			end
+		end
+	end	
 
 	form do |f|
 		f.actions
@@ -37,6 +51,7 @@ permit_params :origin_id, :movie_type, :distributor_id, :productor_id, :chinese_
 		f.actions
 	end
 	filter :chinese_name
+	filter :english_name
 	filter :movie_type
 
 end

@@ -5,14 +5,14 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: postgresql
   encoding: unicode
   pool: 5
   timeout: 5000
 
 development:
   <<: *default
-  database: movie_follower_development
+  adapter: sqlites
+  database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -23,4 +23,5 @@ test:
 
 production:
   <<: *default
+  adapter: postgresql
   database: movie_follower_production

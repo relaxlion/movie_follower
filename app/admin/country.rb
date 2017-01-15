@@ -11,7 +11,11 @@ permit_params :name, :language
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-
+ 	index do
+		column :name
+		column :language
+		actions
+	end 
 	config.filters = false
 
 end

@@ -1,5 +1,5 @@
 ActiveAdmin.register Person do
-	menu parent: "movier",priority: 4
+	menu parent: "Movier",priority: 4
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -12,6 +12,16 @@ permit_params :chinese_name,:english_name,:country_id,:gender,:birthday
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+    index do
+		column :chinese_name 
+		column :english_name
+		column :gender
+		column :birthday do |person|
+				person.birthday.strftime("%Y-%m-%d")
+			end
+		actions
+	end 
+
 	show do
 		attributes_table do
 			rows :id, :chinese_name, :english_name, :country, :gender
@@ -20,6 +30,10 @@ permit_params :chinese_name,:english_name,:country_id,:gender,:birthday
 			end
 		end
 	end
+
+	filter :chinese_name
+	filter :english_name
+	filter :gender
 
 
 	form do |f|

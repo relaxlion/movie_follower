@@ -28,10 +28,10 @@ permit_params :movie_id, :person_id
 		attributes_table do
 			row :id
 			row :movie do
-				link_to "#{Movie.find(director.movie_id).chinese_name}"
+				link_to "#{Movie.find(director.movie_id).chinese_name}", admin_movie_path(id: director.movie.id)
 			end
 			row :person do
-				link_to "#{Person.find(director.person_id).chinese_name}"
+				link_to "#{Person.find(director.person_id).chinese_name}", admin_person_path(id: director.person.id)
 			end
 		end
 	end

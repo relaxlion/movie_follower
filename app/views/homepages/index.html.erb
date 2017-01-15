@@ -1,1 +1,92 @@
-<%= link_to "電影總覽", admin_root_path %>
+
+ 
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+
+	<title>Movie Follower</title>
+
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+		<style>
+		body {
+    		background: url("http://www.mormontransitions.org/wp-content/uploads/2015/12/Movie-making4.jpg");
+    		background-size: 1080px ;
+    		background-repeat: no-repeat;
+   		}
+		h1 {
+			border:3px solid white;
+			text-align: center;
+			padding: 5px;
+			width: 300px;
+			color: white;
+			background-color: rgba(0,0,0,0.4);
+			
+		}
+		h2 {
+			text-align: center;
+			margin-top: 20px;
+			color: black;
+		}
+		h3 {
+			text-align: center;
+			color: white;
+		}
+
+		
+		.floating-box{
+			float: left;
+			width: 250px;
+			height: 250px;
+			margin: 30px;
+			background-color: rgba(100%,100%,100%,0.6);
+		}
+        a:link {
+    		color: white;
+		}
+		a:visited {
+		    color: white;
+		}
+		a:hover {
+    		color: white;
+		}
+		a:active {
+    		color: hotpink;
+		}
+		.icon{
+			width: 150px;
+			margin: 0px 50px;
+		}
+
+		</style>	
+	</head>
+	<body>
+
+		<h1>Movie Follower電影資料庫</h1>
+		<br>
+		<br>
+	 	<br>
+	 	<div class="floating-box">
+	 		<h2>評 價 排 序</h2>
+	 		<div>
+	 			<img class="icon" src="http://i.imgur.com/ALs5j8d.png">
+	 		</div>
+	 		
+	 	</div>
+	 	<div class="floating-box">
+	 		<h2>分 類 查 詢</h2>
+	 		<div>
+	 			<img class="icon" src="http://i.imgur.com/VlQh7Oh.png	">
+	 		</div>
+	 	</div>
+	 	<div class="floating-box">
+	 		<h2>獎 項 查 詢</h2>
+	 		<div>
+	 			<img class="icon" src="http://i.imgur.com/7i6A4z2.png">
+	 		</div>
+	 	</div>
+
+		<h3><%= link_to "由此進入>>", admin_root_path %></h3>
+	</body>
+</html> 

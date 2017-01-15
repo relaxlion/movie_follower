@@ -14,10 +14,10 @@ permit_params :movie_id, :person_id
 # end
 	index do
 		id_column
-		column :director_name, sortable: true do |d|
+		column :director_name do |d|
 			Person.find(d.person_id).chinese_name
 		end
-		column :director_movie, sortable: true do |d|
+		column :director_movie do |d|
 			Movie.find(d.movie_id).chinese_name
 		end
 		actions
@@ -46,6 +46,8 @@ permit_params :movie_id, :person_id
 		end
 		f.actions
 	end
-	config.filters = false
+	
+	filter  :movie, as: :select, :collection => Movie.all.map{|m| ["#{m.chinese_name}", m.id]}
+	filter  :person, as: :select, :collection => Person.all.map{|p| ["#{p.chinese_name}", p.id]}
 
 end
